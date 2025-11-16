@@ -1,0 +1,23 @@
+// LDR + LED Control using Arduino Uno
+
+int ldrPin = A0;   // LDR connected to analog pin A0
+int ledPin = 9;    // LED connected to digital pin 9
+int threshold = 500; // Light threshold value
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);   // For monitoring LDR values
+}
+
+void loop() {
+  int ldrValue = analogRead(ldrPin);
+  Serial.println(ldrValue);  // Print light level to Serial Monitor
+
+  if (ldrValue < threshold) {
+    digitalWrite(ledPin, HIGH);  // It's dark → LED ON
+  } else {
+    digitalWrite(ledPin, LOW);   // It's bright → LED OFF
+  }
+
+  delay(200);
+}
