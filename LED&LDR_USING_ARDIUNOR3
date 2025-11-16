@@ -21,3 +21,4 @@ void loop() {
 
   delay(200);
 }
+//BASIC ARDIUNO CODE FOR AN LED BLINKING USING LDR IN ARDIUNO R3 -SRV...
