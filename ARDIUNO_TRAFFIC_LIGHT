@@ -1,0 +1,33 @@
+// Traffic Light System using Arduino Uno R3
+
+int red = 13;
+int yellow = 12;
+int green = 11;
+
+void setup() {
+  pinMode(red, OUTPUT);
+  pinMode(yellow, OUTPUT);
+  pinMode(green, OUTPUT);
+}
+
+void loop() {
+
+  // Green Light ON
+  digitalWrite(green, HIGH);
+  digitalWrite(yellow, LOW);
+  digitalWrite(red, LOW);
+  delay(5000);   // Green for 5 seconds
+
+  // Yellow Light ON
+  digitalWrite(green, LOW);
+  digitalWrite(yellow, HIGH);
+  digitalWrite(red, LOW);
+  delay(2000);  // Yellow for 2 seconds
+
+  // Red Light ON
+  digitalWrite(green, LOW);
+  digitalWrite(yellow, LOW);
+  digitalWrite(red, HIGH);
+  delay(5000);  // Red for 5 seconds
+} 
+// BASIC ARDIUNO CODE FOR AN TRAFFIC LIGHT -SRV...
