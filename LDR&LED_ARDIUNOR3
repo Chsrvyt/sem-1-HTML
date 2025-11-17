@@ -1,0 +1,24 @@
+// set pin numbers
+const int ledPin = 12;      // LED pin
+const int ldrPin = A0;      // LDR pin (analog)
+
+// setup function
+void setup() {
+    Serial.begin(9600);
+    pinMode(ledPin, OUTPUT);  // LED is output
+    // NOTE: analog pins don't need pinMode(INPUT)
+}
+
+// loop function
+void loop() {
+    int ldrStatus = analogRead(ldrPin);   // read LDR value
+    Serial.println(ldrStatus);            // print value
+
+    if (ldrStatus <= 80) {                // if dark
+        digitalWrite(ledPin, HIGH);       // LED ON
+    } 
+    else {                                // if bright
+        digitalWrite(ledPin, LOW);        // LED OFF
+    }
+}
+
